@@ -45,6 +45,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- REGISTRATION PAGE -->
   <div data-role="page" id="reg" data-theme="a">
     <div data-role="header" data-position="fixed">
+      <a data-role='button' href='#loginreg' data-icon='back' data-iconpos="notext">Go back to Reg/Login</a>
       <h1>Register</h1>
     </div><!-- end header div -->
 
@@ -59,9 +60,10 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-  <!-- REGISTRATION:User PAGE -->
+  <!-- REGISTRATION:User PAGE --> 
   <div data-role="page" id="regUser" data-theme="a">
     <div data-role="header" data-position="fixed">
+      <a data-role='button' href='#reg' data-icon='back' data-iconpos="notext">Go back to Reg</a>
       <h1>Register - USER</h1>
     </div><!-- end header div -->
 
@@ -85,6 +87,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <!-- SETTINGS:User PAGE -->
+  <!-- NEEDS REAL BACK BUTTON -->
   <div data-role="page" id="settingsUser" data-theme="a">
     <div data-role="header" data-position="fixed">
       <h1>Settings - USER</h1>
@@ -106,9 +109,9 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <!-- REGISTRATION:Vendor PAGE -->
-
   <div data-role="page" id="regVendor" data-theme="a">
     <div data-role="header" data-position="fixed">
+      <a data-role='button' href='#reg' data-icon='back' data-iconpos="notext">Go back to Reg</a>
       <h1>Register - Vendor</h1>
     </div><!-- end header div -->
 
@@ -132,6 +135,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <!-- SETTINGS:Vendor PAGE -->
+  <!-- NEED REAL BACK BUTTON -->
   <div data-role="page" id="settingsVendor" data-theme="a">
     <div data-role="header" data-position="fixed">
       <h1>Settings - Vendor</h1>
@@ -231,8 +235,8 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- vendor list:MORTON WILLIAMS OF PAGE -->
   <div data-role="page" id="mortonWilliams" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a href='#userHome' data-icon='back'>Back</a>
-      <a data-icon='shop'>Cart</a>
+      <a href='#userHome' data-icon='back' data-iconpos="notext">Back to Home</a>
+      <a data-icon='shop' data-iconpos="notext">Cart</a>
       <h1>Morton Williams</h1>
     </div><!-- end header div -->
 
@@ -264,8 +268,8 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- CONFIRMATION PAGE -->
   <div data-role="page" id="confirm" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a href='#mortonWilliams' data-icon='back'>Back</a>
-      <a data-icon='shop'>Cart</a>
+      <a href='#mortonWilliams' data-icon='back' data-iconpos="notext">Back to Home</a>
+      <a data-icon='shop' data-iconpos="notext">Cart</a>
       <h1>Confirmation</h1>
     </div><!-- end header div -->
 
@@ -286,14 +290,14 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- Success:user PAGE -->
   <div data-role="page" id="success" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a data-icon='shop'>Cart</a>
+      <a data-icon='shop' data-iconpos="notext">Cart</a>
       <h1>Success!</h1>
     </div><!-- end header div -->
 
     <div data-role="main" class="ui-content">
       <img src='media/tick.png' style='width:100%' data-inset='true'>
       <h2>Your item has been added to your cart.</h2>
-      <a data-role='button' href='#userHome' data-icon='back'>Go back to home</a>
+      <a data-role='button' href='#userHome' data-icon='back'>Back to Home</a>
     </div><!-- main -->
 
   </div>
@@ -305,13 +309,13 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <div data-role="page" id="cancel" data-theme="a">
     <div data-role="header" data-position="fixed">
       <a href='#userHome' data-icon='back'>Back</a>
-      <a data-icon='shop'>Cart</a>
+      <a data-icon='shop' data-iconpos="notext">Cart</a>
       <h1>Your order has been cancelled</h1>
     </div><!-- end header div -->
 
     <div data-role="main" class="ui-content">
       <img src='media/x.png' style='width:100%' data-inset='true'>
-      <br><br><a data-role='button' href='#userHome' data-icon='home'>Go back to home</a>
+      <br><br><a data-role='button' href='#userHome' data-icon='home'>Back to Home</a>
     </div><!-- main -->
 
   </div>
@@ -322,7 +326,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- vendor:HOME PAGE -->
   <div data-role="page" id="vendorHome" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a data-icon='gear' href='#settingsVendor'>Settings</a>
+      <a href='#settingsVendor' data-icon='gear' data-iconpos="notext">Settings</a>
       <h1>Home</h1>
     </div><!-- end header div -->
 
@@ -341,7 +345,8 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- vendor:add produce PAGE -->
   <div data-role="page" id="addProduce" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a data-icon='gear' href='#settingsVendor'>Settings</a>
+      <a data-role='button' href='#vendorHome' data-icon='back' data-iconpos="notext"></a>
+      <a data-icon='gear' href='#settingsVendor' data-iconpos="notext">Settings</a>
       <h1>Add a donation</h1>
     </div><!-- end header div -->
 
@@ -365,7 +370,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
         <input type='text' name='produceSize' id='produceSize' value=''/>
       </form>
 
-      <br><a href='#successAddVendor' data-role='button'>Add to inventory</a>
+      <br><a href='#successAddVendor' data-role='button'>Add to Inventory</a>
     </div><!-- main -->
 
   </div>
@@ -382,7 +387,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
     <div data-role="main" class="ui-content">
       <img src='media/tick.png' style='width:100%' data-inset='true'>
       <h2>The item has been added to your inventory and your followers have been notified.</h2>
-      <a data-role='button' href='#vendorHome' data-icon='back'>Go back to home</a>
+      <a data-role='button' href='#vendorHome' data-icon='back'>Back to Home</a>
     </div><!-- main -->
 
   </div>
@@ -393,7 +398,8 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- vendor:remove produce PAGE -->
   <div data-role="page" id="removeProduce" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a data-icon='gear' href='#settingsVendor'>Settings</a>
+      <a data-role='button' href='#vendorHome' data-icon='back' data-iconpos="notext"></a>
+      <a data-icon='gear' href='#settingsVendor' data-iconpos="notext">Settings</a>
       <h1>Add a donation</h1>
     </div><!-- end header div -->
 
@@ -413,13 +419,30 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
       <label for='produceDonated'>Amount donated: (lbs)</label>
       <input type='text' name='produceDonated' id='produceDonated' value=''/>
 
-      <br><a href='#successRemVendor' data-role='button'>Remove from inventory</a>
+      <br><a href='#successRemVendor' data-role='button'>Remove from Inventory</a>
     </div><!-- main -->
 
   </div>
   <!-- END remove produce vendor PAGE -->
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+     <!-- Success-remove:vendor PAGE -->
+  <div data-role="page" id="successRemVendor" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <h1>Success!</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <img src='media/x.png' style='width:100%' data-inset='true'>
+      <h2>The item has been removed from your inventory and your followers have been notified.</h2>
+      <a data-role='button' href='#vendorHome' data-icon='back'>Back to Home</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END SUCCESS-add:vendor PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 </body>
 </html>
