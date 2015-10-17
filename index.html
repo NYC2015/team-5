@@ -51,7 +51,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
     <div data-role="main" class="ui-content">
       <h2>Who are you?</h2>
       <a href='#regUser' data-role='button'>User</a>
-      <a href='' data-role='button'>Vendor</a>
+      <a href='#regVendor' data-role='button'>Vendor</a>
     </div><!-- main -->
 
   </div>
@@ -68,12 +68,12 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
     <div data-role="main" class="ui-content">
       <label for='snapCode'>SNAP:</label>
       <input type='text' name='snap' id='snapCode' value=''/>
-      <label for='snapCode'>Username:</label>
+      <label for='username2'>Username:</label>
       <input type='text' name='username' id='username2' value=''/> <!-- should pull from username1-->
-      <label for='snapCode'>Password:</label>
+      <label for='password2'>Password:</label>
       <input type='text' name='password' id='password2' value=''/>
-      <label for='basic'>Please retype your password:</label>
-      <input type='text' name='password1Check' id='basic' value=''/>
+      <label for='password1Check'>Please retype your password:</label>
+      <input type='text' name='password1Check' id='password1Check' value=''/>
       <!-- put in password1Check == password1 -> buttons below works -->
 
       <a href='#settingsUser' data-role='button'>Next</a>
@@ -105,12 +105,59 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
+  <!-- REGISTRATION:Vendor PAGE -->
+  <div data-role="page" id="regVendor" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <h1>Register - Vendor</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <label for='username3'>Username:</label>
+      <input type='text' name='username' id='username3' value=''/> <!-- should pull from username1-->
+      <label for='password3'>Password:</label>
+      <input type='text' name='password' id='password3' value=''/>
+      <label for='password3Check'>Please retype your password:</label>
+      <input type='text' name='password3Check' id='password3Check' value=''/>
+      <!-- put in password1Check == password1 -> buttons below works -->
+      <label for='store'>Store name:</label>
+      <input type='text' name='store' id='store' value=''/>
+
+      <a href='#settingsVendor' data-role='button'>Next</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END REGISTRATION:Vendor PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- SETTINGS:Vendor PAGE -->
+  <div data-role="page" id="settingsVendor" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <h1>Settings - Vendor</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <label for='storeLoc'>Store location:</label>
+      <input type='text' name='storeLoc' id='storeLoc' value=''/>
+      <label for='storeNum'>Store phone number:</label>
+      <input type='text' name='storeNum' id='storeNum' value=''/>
+      <label for='storeHours'>Store hours of operation:</label>
+      <input type='text' name='storeHours' id='storeHours' value=''/>
+
+      <a href='#vendorHome' data-role='button'>Save</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END Settings:Vendor PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
   <!-- user:HOME PAGE -->
   <div data-role="page" id="userHome" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a data-icon='gear'>Settings</a>
+      <a data-icon='gear' href='#settingsUser'>Settings</a>
       <a data-icon='shop'>Cart</a>
-      <h1>HOME</h1>
+      <h1>Home</h1>
     </div><!-- end header div -->
 
     <div data-role="main" class="ui-content">
@@ -180,7 +227,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-  <!-- Success PAGE -->
+  <!-- Success:user PAGE -->
   <div data-role="page" id="success" data-theme="a">
     <div data-role="header" data-position="fixed">
       <a data-icon='shop'>Cart</a>
@@ -194,7 +241,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
     </div><!-- main -->
 
   </div>
-  <!-- END SUCCESS PAGE -->
+  <!-- END SUCCESS:user PAGE -->
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
@@ -213,6 +260,125 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
 
   </div>
   <!-- END Cancellation PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- vendor:HOME PAGE -->
+  <div data-role="page" id="vendorHome" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a data-icon='gear' href='#settingsVendor'>Settings</a>
+      <h1>Home</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+
+      <img src='media/supermarket.jpg' style='width:100%' data-inset='true'>
+      <a href='#addProduce' data-role='button' data-icon='plus'>Add a donation</a>
+      <a href='#removeProduce' data-role='button' data-icon='minus'>A product was picked up</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END vendor:HOME PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- vendor:add produce PAGE -->
+  <div data-role="page" id="addProduce" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a data-icon='gear' href='#settingsVendor'>Settings</a>
+      <h1>Add a donation</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <label for='produceName'>Name of donation:</label>
+        <input type='text' name='produce-name' id='produceName' value=''/>
+
+        <div class="ui-field-contain">
+            <label for="produceType">How would you categorize it?</label>
+            <select name="produceType" id="produceType">
+                <option value="1">Fruits and vegetables</option>
+                <option value="2">Carbohydrates</option>
+                <option value="3">Meat, fish and meat alternatives</option>
+                <option value="4">Milk and dairy</option>
+                <option value="4">Fats and sugars</option>
+            </select>
+        </div>
+
+        <br><label for='produceSize'>Size of donation: (lbs)</label>
+        <input type='text' name='produceSize' id='produceSize' value=''/>
+      </form>
+
+      <br><a href='#successAddVendor' data-role='button'>Add to inventory</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END vendor:HOME PAGE -->
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- Success-add:vendor PAGE -->
+  <div data-role="page" id="successAddVendor" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <h1>Success!</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <img src='media/tick.png' style='width:100%' data-inset='true'>
+      <h2>The item has been added to your inventory and your followers have been notified.</h2>
+      <a data-role='button' href='#vendorHome' data-icon='back'>Go back to home</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END SUCCESS-add:vendor PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- vendor:remove produce PAGE -->
+  <div data-role="page" id="removeProduce" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a data-icon='gear' href='#settingsVendor'>Settings</a>
+      <h1>Add a donation</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <fieldset data-role="controlgroup">
+        <legend>Select an item:</legend>
+        <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+        <label for="radio-choice-1">Broccoli</label>
+
+        <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+        <label for="radio-choice-2">Lettuce</label>
+
+        <input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  />
+        <label for="radio-choice-3">Beef</label>
+      </fieldset>
+
+      <label for='produceDonated'>Amount donated: (lbs)</label>
+      <input type='text' name='produceDonated' id='produceDonated' value=''/>
+
+      <br><a href='#successRemVendor' data-role='button'>Remove from inventory</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END remove produce vendor PAGE -->
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- Success-add:vendor PAGE -->
+  <div data-role="page" id="successRemVendor" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <h1>Success!</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <img src='media/tick.png' style='width:100%' data-inset='true'>
+      <h2>The item has been removed from your inventory and your followers have been notified.</h2>
+      <a data-role='button' href='#vendorHome' data-icon='back'>Go back to home</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END SUCCESS-add:vendor PAGE -->
 
 
 </body>
