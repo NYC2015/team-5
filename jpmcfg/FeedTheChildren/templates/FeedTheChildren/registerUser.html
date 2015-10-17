@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<!--Code for Good 2015 NYC
+Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
+16 Oct 2015-->
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" /> -->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <title>Feed The Children app</title>
+
+</head>
+<body>
+ <!-- SETTINGS:User PAGE -->
+  <div data-role="page" id="settingsUser" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <h1>Settings - USER</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <label for='homeLoc'>Home location:</label>
+      <input type='text' name='home' id='homeLoc' value=''/> <!-- TO BE CHANGED LATER: CURRENT OR MANUAL -->
+      <label for='radius'>How far are you willing to travel to pick up food? (miles)
+      </label>
+      <input type='text' name='distance' id='radius' value=''/>
+
+      <a href='#userHome' data-role='button'>Save</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END Settings:User PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+</body>
+

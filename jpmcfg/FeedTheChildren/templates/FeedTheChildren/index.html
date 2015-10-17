@@ -5,12 +5,11 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
 16 Oct 2015-->
 
 <html>
-{% load static %}
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+  <link rel="stylesheet" href="style.css">
+  <!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" /> -->
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -19,39 +18,208 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
 </head>
 
 <body>
-  <!-- <div data-role='page' id='login' data-theme=''>
-    <div data-role='header' data-position='fixed'>
-      <h1>FeedTheChildren</h1>
-    </div><!--header--> 
 
-    <!-- HOME PAGE -->
+  <!-- LOGIN/REG PAGE -->
   <div data-role="page" id="loginreg" data-theme="a">
     <div data-role="header" data-position="fixed">
       <h1>Login / Registration</h1>
     </div><!-- end header div -->
 
     <div data-role="main" class="ui-content">
+      <form action="/FeedTheChildren/login" method="post">
+      {% csrf_token %}		
       <label for='basic'>Username:</label>
-      <input type='text' name='username' id='basic' value=''/>
+      <input type='text' name='username1' id='basic'/>
       <label for='basic'>Password:</label>
-      <input type='text' name='password' id='basic' value=''/>
-      <a href="" data-role="button">Signup</button>
+      <input type='password' name='password1' id='basic'/>
+      
+      <a href="#reg" data-role="button">Signup</a>
+      <input type="submit" value="Login">
+      </form><!-- check a) if is a vendor or a user, and b) if it matches -->
     </div><!-- end ui-content div-->
 
-    <div data-role="footer" data-position='fixed' data-theme='b'>Code for Good Team 5 &copy; 2015</div>
+    <!-- <div data-role="footer" data-position='fixed' data-theme='b'>Code for Good Team 5 &copy; 2015</div> -->
 
   </div>
-  <!-- END HOME PAGE -->
+  <!-- END LOGIN/REG PAGE -->
 
+  <!-- - - - - -- - - - - - - - - - - - - - -- - - - - - -- - - - - - - -->
+
+  <!-- REGISTRATION PAGE -->
+  <div data-role="page" id="reg" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <h1>Register</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <h2>Who are you?</h2>
+      <a href='#regUser' data-role='button'>User</a>
+      <a href='' data-role='button'>Vendor</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END REGISTRATION PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- REGISTRATION:User PAGE -->
+  <div data-role="page" id="regUser" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <h1>Register - USER</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <form action="/FeedTheChildren/createUser" method="post">
+       {% csrf_token %}
+      <label for='snapCode'>SNAP:</label>
+      <input type='text' name='snap' id='snapCode' />
+      <label for='snapCode'>Username:</label>
+      <input type='text' name='username' id='username2'/> <!-- should pull from username1-->
+      <label for='snapCode'>Password:</label>
+      <input type='password' name='password' id='password2'/>
+      <label for='basic'>Please retype your password:</label>
+      <input type='password' name='password1Check' id='basic'/>
+      <!-- put in password1Check == password1 -> buttons below works -->
+      
+      <input type='submit' value="Next">
+      </form>
+    </div><!-- main -->
+
+  </div>
+  <!-- END REGISTRATION:User PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- SETTINGS:User PAGE -->
+  <div data-role="page" id="settingsUser" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <h1>Settings - USER</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <label for='homeLoc'>Home location:</label>
+      <input type='text' name='home' id='homeLoc' value=''/> <!-- TO BE CHANGED LATER: CURRENT OR MANUAL -->
+      <label for='radius'>How far are you willing to travel to pick up food? (miles)
+      </label>
+      <input type='text' name='distance' id='radius' value=''/>
+
+      <a href='#userHome' data-role='button'>Save</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END Settings:User PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- user:HOME PAGE -->
+  <div data-role="page" id="userHome" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a data-icon='gear'>Settings</a>
+      <a data-icon='shop'>Cart</a>
+      <h1>HOME</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+
+      <img src='media/map.png' style='width:100%' data-inset='true'>
+      <h3>Vendors with food available</h3>
+      <a href='#mortonWilliams' data-role='button'>Morton Williams</a>
+    </div><!-- main -->
+  </div>
+  <!-- END user:HOME PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- vendor list:MORTON WILLIAMS OF PAGE -->
+  <div data-role="page" id="mortonWilliams" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a href='#userHome' data-icon='back'>Back</a>
+      <a data-icon='shop'>Cart</a>
+      <h1>Morton Williams</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+
+      <img src='media/mortonwilliams.jpg' style='width:100%' data-inset='true'>
+      <div data-role="collapsible-set">
+        <div data-role="collapsible">
+          <h3>Vegetables</h3>
+          <label><input type="checkbox" name="veg-1" value='broccoli' />Broccoli</label>
+          <label><input type="checkbox" name="veg-2" value='lettuce' />Lettuce</label>
+        </div>
+
+        <div data-role="collapsible">
+          <h3>Meat</h3>
+          <label><input type="checkbox" name="meat-1" value='beef' />Beef</label>
+        </div>
   
+      </div><!-- collapsible set -->
 
-  </div> <!-- page -->
+      <br><a href='#confirm' data-role='button' data-icon='check'>Add to Cart</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END vendor list:MORTON WILLIAMS PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- CONFIRMATION PAGE -->
+  <div data-role="page" id="confirm" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a href='#mortonWilliams' data-icon='back'>Back</a>
+      <a data-icon='shop'>Cart</a>
+      <h1>Confirmation</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <h3>After confirmation, your selection will be reserved for you for 30 minutes.</h3>
+      <img src='media/cart.png' style='width:100%' data-inset='true'>
+
+      <h2>Are you sure?</h2>
+      <a href='#success' data-role='button' data-icon='check'>Yes</a>
+      <a href='#cancel' data-role='button' data-icon='delete'>No</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END CONFIRMATION PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- Success PAGE -->
+  <div data-role="page" id="success" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a data-icon='shop'>Cart</a>
+      <h1>Success!</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <img src='media/tick.png' style='width:100%' data-inset='true'>
+      <h2>Your item has been added to your cart.</h2>
+      <a data-role='button' href='#userHome' data-icon='back'>Go back to home</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END SUCCESS PAGE -->
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- Cancellation PAGE -->
+  <div data-role="page" id="cancel" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <a href='#userHome' data-icon='back'>Back</a>
+      <a data-icon='shop'>Cart</a>
+      <h1>Your order has been cancelled</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <img src='media/x.png' style='width:100%' data-inset='true'>
+      <br><br><a data-role='button' href='#userHome' data-icon='home'>Go back to home</a>
+    </div><!-- main -->
+
+  </div>
+  <!-- END Cancellation PAGE -->
 
 
-<script>
-
-
-</script>
 </body>
 
 </html>

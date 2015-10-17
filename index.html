@@ -9,7 +9,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+  <!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" /> -->
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -68,12 +68,12 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
     <div data-role="main" class="ui-content">
       <label for='snapCode'>SNAP:</label>
       <input type='text' name='snap' id='snapCode' value=''/>
-      <label for='snapCode'>Username:</label>
+      <label for='username2'>Username:</label>
       <input type='text' name='username' id='username2' value=''/> <!-- should pull from username1-->
-      <label for='snapCode'>Password:</label>
+      <label for='password2'>Password:</label>
       <input type='text' name='password' id='password2' value=''/>
-      <label for='basic'>Please retype your password:qw</label>
-      <input type='text' name='password1Check' id='basic' value=''/>
+      <label for='password1Check'>Please retype your password:</label>
+      <input type='text' name='password1Check' id='password1Check' value=''/>
       <!-- put in password1Check == password1 -> buttons below works -->
 
       <a href='#settingsUser' data-role='button'>Next</a>
@@ -105,7 +105,8 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
 
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-<!-- REGISTRATION:Vendor PAGE -->
+  <!-- REGISTRATION:Vendor PAGE -->
+
   <div data-role="page" id="regVendor" data-theme="a">
     <div data-role="header" data-position="fixed">
       <h1>Register - Vendor</h1>
@@ -419,21 +420,6 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- END remove produce vendor PAGE -->
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-
-  <!-- Success-add:vendor PAGE -->
-  <div data-role="page" id="successRemVendor" data-theme="a">
-    <div data-role="header" data-position="fixed">
-      <h1>Success!</h1>
-    </div><!-- end header div -->
-
-    <div data-role="main" class="ui-content">
-      <img src='media/tick.png' style='width:100%' data-inset='true'>
-      <h2>The item has been removed from your inventory and your followers have been notified.</h2>
-      <a data-role='button' href='#vendorHome' data-icon='back'>Go back to home</a>
-    </div><!-- main -->
-
-  </div>
-  <!-- END SUCCESS-add:vendor PAGE -->
 
 </body>
 </html>
