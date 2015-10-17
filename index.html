@@ -87,9 +87,9 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <!-- SETTINGS:User PAGE -->
-  <!-- NEEDS REAL BACK BUTTON -->
   <div data-role="page" id="settingsUser" data-theme="a">
     <div data-role="header" data-position="fixed">
+      <a data-role='button' data-icon='back' data-rel="back" data-iconpos="notext"></a>
       <h1>Settings - USER</h1>
     </div><!-- end header div -->
 
@@ -135,9 +135,9 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <!-- SETTINGS:Vendor PAGE -->
-  <!-- NEED REAL BACK BUTTON -->
   <div data-role="page" id="settingsVendor" data-theme="a">
     <div data-role="header" data-position="fixed">
+      <a data-role='button' data-icon='back' data-rel="back" data-iconpos="notext"></a>
       <h1>Settings - Vendor</h1>
     </div><!-- end header div -->
 
@@ -161,16 +161,21 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <div data-role="page" id="userHome" data-theme="a">
     <div data-role="header" data-position="fixed">
       <!--span class='ui-icon-gear'></span-->
-      <a href="#myPanel" data-icon="bars" data-iconpos="notext">Settings</a>
+      <a href="#userPanel" data-icon="bars" data-iconpos="notext"></a>
       <a data-icon="shop" data-iconpos="notext">Cart</a>
       <h1>HOME</h1>
     </div><!-- end header div -->
 
-    <div data-role="panel" id="myPanel" data-display="overlay" data-theme="a">
+    <div data-role="panel" id="userPanel" data-display="overlay" data-theme="a">
       <ul data-role="listview" data-theme="a" data-divider-theme="a" class="nav-search">
         <li data-icon="delete" data-iconpos="notext">
           <a href="#" data-rel="close"></a>
-        </li>
+        <li>
+          <a href="#settingsUser" data-icon="gear">Settings</a>
+        <li>
+          <a href="" data-icon="star">View Balance</a>
+        <li>
+          <a data-role='button'>Log Out</a>
       </ul>
     </div><!-- / panel -->
 
@@ -236,6 +241,7 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <div data-role="page" id="mortonWilliams" data-theme="a">
     <div data-role="header" data-position="fixed">
       <a href='#userHome' data-icon='back' data-iconpos="notext">Back to Home</a>
+      <!--a href="#myPanel" data-icon="bars" data-iconpos="notext"></a-->
       <a data-icon='shop' data-iconpos="notext">Cart</a>
       <h1>Morton Williams</h1>
     </div><!-- end header div -->
@@ -326,9 +332,22 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
   <!-- vendor:HOME PAGE -->
   <div data-role="page" id="vendorHome" data-theme="a">
     <div data-role="header" data-position="fixed">
-      <a href='#settingsVendor' data-icon='gear' data-iconpos="notext">Settings</a>
+      <a href='#vendorPanel' data-icon='bars' data-iconpos="notext"></a>
       <h1>Home</h1>
     </div><!-- end header div -->
+
+    <div data-role="panel" id="vendorPanel" data-display="overlay" data-theme="a">
+      <ul data-role="listview" data-theme="a" data-divider-theme="a" class="nav-search">
+        <li data-icon="delete" data-iconpos="notext">
+          <a href="#" data-rel="close"></a>
+        <li>
+          <a href="#settingsVendor" data-icon="gear">Settings</a>
+        <li>
+          <a href="" data-icon="star">View Inventory</a>
+        <li>
+          <a data-role='button'>Log Out</a>
+      </ul>
+    </div><!-- / panel -->
 
     <div data-role="main" class="ui-content">
 
@@ -368,6 +387,9 @@ Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
 
         <br><label for='produceSize'>Size of donation: (lbs)</label>
         <input type='text' name='produceSize' id='produceSize' value=''/>
+
+        <br><label for='produceTime'>Time to pick up: (hrs)</label>
+        <input type='text' name='produceTime' id='produceTime' value=''/>
       </form>
 
       <br><a href='#successAddVendor' data-role='button'>Add to Inventory</a>
