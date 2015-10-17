@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!--Code for Good 2015 NYC
+Lorenzo, Derek, Bing, Stephen, Pam, Yuyu
+16 Oct 2015-->
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <title>Feed The Children app</title>
+
+</head>
+
+<body>
+  <!-- <div data-role='page' id='login' data-theme=''>
+    <div data-role='header' data-position='fixed'>
+      <h1>FeedTheChildren</h1>
+    </div><!--header--> 
+
+    <!-- HOME PAGE -->
+  <div data-role="page" id="loginreg" data-theme="a">
+    <div data-role="header" data-position="fixed">
+      <h1>Login / Registration</h1>
+    </div><!-- end header div -->
+
+    <div data-role="main" class="ui-content">
+      <label for='basic'>Username:</label>
+      <input type='text' name='username' id='basic' value=''/>
+      <label for='basic'>Password:</label>
+      <input type='text' name='password' id='basic' value=''/>
+      <a href="" data-role="button">Signup</button>
+    </div><!-- end ui-content div-->
+
+    <div data-role="footer" data-position='fixed' data-theme='b'>Code for Good Team 5 &copy; 2015</div>
+
+  </div>
+  <!-- END HOME PAGE -->
+
+  
+
+  </div> <!-- page -->
+
+
+
+</body>
+
+</html>
