@@ -1,0 +1,35 @@
+.landscape-menu {
+	float:left;
+	width:19.5%;
+	display:inline;
+	padding:0px;
+}
+
+.landscape-menu li {
+	text-align:left;
+	list-style-type:none;
+}
+
+.landscape-menu ul {
+	padding-left:0;
+	margin-top:0px;
+}
+
+.landscape-menu h5 {
+	border-bottom:1px solid black;
+	margin-bottom:0px;
+}
+
+
+#lulu-lunch, #bates-lunch, #pom-lunch, #stoned-lunch, #tower-lunch {
+	display:inline;
+	text-align:left;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:0;
+	border-right:1px solid #cccccc;
+}
+
+#tower-lunch {
+	border-right:0px;
+}

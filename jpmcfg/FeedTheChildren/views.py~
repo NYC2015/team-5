@@ -42,6 +42,6 @@ def login(request):
 
 
 def home(request):
-    return render(request, "FeedTheChildren/index.html")
+    render(request, "FeedTheChildren/index.html")
 
     
